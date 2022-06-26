@@ -8,31 +8,76 @@ document.addEventListener(
         return 123 != (e = e || window.event).keyCode && (!e.ctrlKey || !e.shiftKey || 73 != e.keyCode) && void 0;
     }),
     (document.getElementById("sortNumber").onclick = function() {
-        var e = Number(document.getElementById("inputNum1").value),
-            t = Number(document.getElementById("inputNum2").value),
-            n = Number(document.getElementById("inputNum3").value),
-            a = document.getElementById("txtSortNumber");
-        a.innerHTML = e > t ? (t > n ? n + " < " + t + " < " + e : e > n ? t + " < " + n + " < " + e : t + " < " + e + " < " + n) : t > n ? (e > n ? n + " < " + e + " < " + t : e + " < " + n + " < " + t) : e + " < " + t + " < " + n;
+        var a = +document.getElementById('inputNum1').value,
+            b = +document.getElementById('inputNum2').value,
+            c = +document.getElementById('inputNum3').value,
+            ketQua = '';
+        if (a < b) {
+            if (b < c) {
+                ketQua = a + ' < ' + b + ' < ' + c;
+            } else if (b > c) {
+                if (a < c) {
+                    ketQua = a + ' < ' + c + ' < ' + b;
+                } else {
+                    ketQua = c + ' < ' + a + ' < ' + b;
+                }
+            }
+        } else if (a > b) {
+            if (b > c) {
+                ketQua = c + ' < ' + b + ' < ' + a;
+            } else if (b < c) {
+                if (a < c) {
+                    ketQua = b + ' < ' + a + ' < ' + c;
+                } else if (a > c) {
+                    ketQua = b + ' < ' + c + ' < ' + a;
+                }
+            }
+        }
+        document.getElementById('txtSortNumber').innerHTML = ' ' + ketQua;
     }),
     (document.getElementById("btnHello").onclick = function() {
-        var e = document.getElementById("selUser").value,
-            t = document.getElementById("txtHello");
-        t.innerHTML = "B" == e ? "Xin chào Bố!" : "M" == e ? "Xin chào Mẹ!" : "A" == e ? "Xin chào Anh Trai!" : "E" == e ? "Xin chào Em gái!" : "Xin chào Người lạ ơi!";
+        var thanhVien = document.getElementById("selUser").value,
+            loiChao = '';
+        if (thanhVien == 'B') {
+            loiChao = 'Xin chào Bố !';
+        } else if (thanhVien == 'M') {
+            loiChao = 'Xin chào Mẹ !';
+        } else if (thanhVien == 'A') {
+            loiChao = 'Xin chào Anh Trai !';
+        } else if (thanhVien == 'E') {
+            loiChao = 'Xin chào Em Gái !'
+        } else {
+            loiChao = 'Xin chào Người lạ !'
+        }
+        document.getElementById('txtHello').innerHTML = ' ' + loiChao;
     }),
     (document.getElementById("btnCount").onclick = function() {
-        var e = document.getElementById("inputCount1").value,
-            t = document.getElementById("inputCount2").value,
-            n = document.getElementById("inputCount3").value,
-            a = 0;
-        e % 2 == 0 && a++, t % 2 == 0 && a++, n % 2 == 0 && a++, (document.getElementById("txtCount").innerHTML = "Có " + a + " số chẵn," + (3 - a) + " số lẻ");
+        var num1 = document.getElementById("inputCount1").value,
+            num2 = document.getElementById("inputCount2").value,
+            num3 = document.getElementById("inputCount3").value,
+            tongSoChan = 0;
+        if (num1 % 2 == 0) { tongSoChan++; }
+        if (num2 % 2 == 0) { tongSoChan++; }
+        if (num3 % 2 == 0) { tongSoChan++; }
+        var tongSoLe = 3 - tongSoChan;
+        document.getElementById('txtCount').innerHTML = ' Tổng số chẵn là : ' + tongSoChan + ' // Còn Tổng số lẻ là : ' + tongSoLe;
     }),
     (document.getElementById("btnEdge").onclick = function() {
-        var e = document.getElementById("inputEdge1").value,
-            t = document.getElementById("inputEdge2").value,
-            n = document.getElementById("inputEdge3").value,
-            a = document.getElementById("txtEdge"),
-            c = Math.sqrt(Math.pow(t, 2) + Math.pow(n, 2)),
-            u = Math.sqrt(Math.pow(e, 2) + Math.pow(n, 2)),
-            m = Math.sqrt(Math.pow(e, 2) + Math.pow(t, 2));
-        a.innerHTML = e == t && t == n ? "Hình tam giác đều" : e == t || t == n || e == n ? "Hình tam giác cân" : e == c || t == u || n == m ? "Hình tam giác vuông" : "Một loại tam giác nào đó";
+        var canh1 = +document.getElementById('inputEdge1').value,
+            canh2 = +document.getElementById('inputEdge2').value,
+            canh3 = +document.getElementById('inputEdge3').value,
+            duDoan = '',
+            binhPhuongCanh1Canh2 = canh1 * canh1 + canh2 * canh2,
+            binhPhuongCanh1Canh3 = canh1 * canh1 + canh3 * canh3,
+            binhPhuongCanh2Canh3 = canh2 * canh2 + canh3 * canh3;
+        if (canh1 == canh2 && canh1 == canh3) {
+            duDoan = 'Đây là tam giác đều !';
+        } else if (canh1 == canh2 || canh2 == canh3 || canh1 == canh3) {
+            duDoan = 'Đây là tam giác cân !';
+        } else if ((canh1 * canh1 === binhPhuongCanh2Canh3) || (canh2 * canh2 == binhPhuongCanh1Canh3) || (canh3 * canh3 == binhPhuongCanh1Canh2)) {
+            duDoan = 'Đây là tam giác vuông !';
+        } else {
+            duDoan = 'Đây là tam giác khác hoặc bình thường !'
+        }
+        document.getElementById('txtEdge').innerHTML = ' ' + duDoan;
     });

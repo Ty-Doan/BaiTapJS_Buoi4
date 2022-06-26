@@ -28,7 +28,7 @@ body {
     /* background-image: url(../img/corner-4.png); */
     background-image: url(../img/background_pitbull.jpg);
     background-size: cover;
-    background-position: right;
+    background-position: center;
     border-top-right-radius: .375rem;
     border-bottom-right-radius: .375rem
 }

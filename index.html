@@ -51,6 +51,7 @@
                                         🔖<a href="https://drive.google.com/file/d/16vYGMr_Ue9HCOtfjstpaS4VLYyrcGoqd/view?usp=sharing" target="_blank">Bai1-ifelse.drawio</a>
                                     </p>
                                 </details>
+                                <hr>
                                 <p><b>Mô hình 3 khối:</b></p>
                                 <ul>
                                     <li>Input
@@ -128,6 +129,42 @@
                                         <img class="w-50" src="https://cdn.jsdelivr.net/gh/khloe1425/BaiTapIfElse@master/img/carbon%20(2).png" alt="">
                                     </p>
                                 </details>
+                                <hr>
+                                <p><b>Mô hình 3 khối :</b></p>
+                                <ul>
+                                    <li>Input
+                                        <ul>
+                                            <li>giá trị value đại diện cho mội thành viên trong gia đình, dùng thẻ Option để nhận chỉ 1 trong 4 giá trị
+                                                <ul>
+                                                    <li>Bố = B</li>
+                                                    <li>Mẹ = M</li>
+                                                    <li>Anh trai = A</li>
+                                                    <li>Em gái = E</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>Output
+                                        <ul>
+                                            <li>Lời chào thành viên tương ứng: kiểu string</li>
+                                        </ul>
+                                    </li>
+                                    <li>Progress
+                                        <ul>
+                                            <li>Tạo biến thanhVien để lưu giá trị mà người dùng chọn</li>
+                                            <li>Tạo biến loiChao để lưu câu chào tương ứng với thành viên đó</li>
+                                            <li>Sử dụng câu điều kiện If else lồng nhau hoặc Switch Case
+                                                <ul>
+                                                    <li>Nếu thanhVien = 'B' thì loiChao = 'Xin chào Bố !' </li>
+                                                    <li>Nếu thanhVien = 'M' thì loiChao = 'Xin chào Mẹ !' </li>
+                                                    <li>Nếu thanhVien = 'A' thì loiChao = 'Xin chào Anh trai !' </li>
+                                                    <li>Nếu thanhVien = 'E' thì loiChao = 'Xin chào Em gái !' </li>
+                                                    <li>ngược lại thì loiChao = 'Xin chào người lạ !'</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             </div>
                             <form class="row gy-3 align-items-center px-2">
                                 <div class="form-group col-12 col-lg-4">
@@ -157,6 +194,34 @@
                                     <br>
                                     <b>🤔TIP:</b> Chỉ cần đếm các số chẵn. Để xác định số lượng số lẻ ta chỉ cần lấy 3 trừ đi số lượng số chẵn đếm được (do chỉ nhập 3 số nguyên)
                                 </p>
+                                <hr>
+                                <p><b>Mô hình 3 khối</b></p>
+                                <ul>
+                                    <li>Input
+                                        <ul>
+                                            <li>3 só nguyên mà người dùng nhập vào: kiểu number</li>
+                                        </ul>
+                                    </li>
+                                    <li>Output
+                                        <ul>
+                                            <li>Tổng các số lẻ, tổng các số chẵn: kiểu number</li>
+                                        </ul>
+                                    </li>
+                                    <li>progress
+                                        <ul>
+                                            <li>tạo biến num1, num2, num3 lưu giá trị của 3 số mà người dùng nhập vào</li>
+                                            <li>tạo biến tongSoChan = 0, tongSoLe = 0 để lưu tổng các số chẵn lẻ</li>
+                                            <li>Dùng câu điều kiện If else
+                                                <ul>
+                                                    <li>Nếu num1 % 2 = 0 thì tongSoChan++</li>
+                                                    <li>Nếu num2 % 2 = 0 thì tongSoChan++</li>
+                                                    <li>Nếu num3 % 2 = 0 thì tongSoChan++</li>
+                                                </ul>
+                                            </li>
+                                            <li>tongSole = 3 - tongSoChan</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             </div>
                             <form class="row gy-3 align-items-center px-2">
                                 <div class="col-12 col-lg-4">
@@ -194,7 +259,37 @@
                                         <li>Vuông: c^2 = a^2 + b^2. Vd: a=3, b=4, c=5 </li>
                                     </ul>
                                 </details>
-
+                                <hr>
+                                <p><b>Mô hình 3 khối :</b></p>
+                                <ul>
+                                    <li>Input
+                                        <ul>
+                                            <li>độ dài 3 cạnh của tam giác: kiểu number</li>
+                                        </ul>
+                                    </li>
+                                    <li>Output
+                                        <ul>
+                                            <li>dự đoán về tam giác đó: chuỗi string</li>
+                                        </ul>
+                                    </li>
+                                    <li>Progress
+                                        <ul>
+                                            <li>tạo biến canh1, canh2, canh3 lưu độ dài 3 cạnh của tam giác</li>
+                                            <li>tạo biến duDoan = '' lưu kết quả của dự đoán</li>
+                                            <li>tạo biến binhPhuongCanh1Canh2 = canh1&sup2; + canh2&sup2;</li>
+                                            <li>tạo biến binhPhuongCanh1Canh3 = canh1&sup2; + canh3&sup2;</li>
+                                            <li>tạo biến binhPhuongCanh2Canh3 = canh2&sup2; + canh3&sup2;</li>
+                                            <li>Sử dụng câu điều kiện if else
+                                                <ul>
+                                                    <li>Nếu canh1 = canh2 && canh1 = canh3 thì duDoan = 'Đây là tam giác đều'</li>
+                                                    <li>Nếu canh1 = canh2 || canh1 = canh3 || canh2 == canh3 thì đây là tam giác cân</li>
+                                                    <li>Nếu <br> (canh1&sup2; = binhPhuongCanh2Canh3 || <br> canh2&sup2; = binhPhuongCanh1Canh3 || <br> canh3&sup2; = binhPhuongCanh1Canh2) thì duDoan = 'Đây là tam giác vuông'</li>
+                                                    <li>Ngược lại thì duDoan = 'Đây là tam giác khác! '</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             </div>
                             <form class="row gy-3 align-items-center px-2">
                                 <div class="col-12 col-lg-4">
